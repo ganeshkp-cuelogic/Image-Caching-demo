@@ -13,12 +13,14 @@
 @implementation CellImage
 
 #pragma mark - Public Methods
--(void)configureCellForIndexPath:(NSIndexPath *)indexPath withImageURL:(NSString *)strImageUrl
+-(void)configureCellForIndexPath:(NSIndexPath *)indexPath withImage:(UIImage *)imageObject
 {
     [self.lblImagename setText:[NSString stringWithFormat:@"Image Number %ld",indexPath.row]];
     
+    [self.imgViewDemo setImage:imageObject];
+    
     //Now Check For Image downloading
-    [self.imgViewDemo loadImageFromURL:[NSURL URLWithString:strImageUrl] withCachingKey:[NSString stringWithFormat:@"image%ld.jpg",indexPath.row] forImageView:self.imgViewDemo];
+    //[self.imgViewDemo loadImageFromURL:[NSURL URLWithString:strImageUrl] withCachingKey:[NSString stringWithFormat:@"image%ld.jpg",indexPath.row] forImageView:self.imgViewDemo];
 }
 
 @end

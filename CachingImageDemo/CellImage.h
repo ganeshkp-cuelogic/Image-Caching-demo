@@ -14,5 +14,5 @@
 
 
 #pragma mark - Public Methods
--(void)configureCellForIndexPath:(NSIndexPath *)indexPath withImageURL:(NSString *)strImageUrl;
+-(void)configureCellForIndexPath:(NSIndexPath *)indexPath withImage:(UIImage *)imageObject;
 @end

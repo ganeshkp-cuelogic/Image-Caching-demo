@@ -18,6 +18,8 @@
 		EBAB032F1BFC746E00486400 /* CellImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAB032E1BFC746E00486400 /* CellImage.m */; settings = {ASSET_TAGS = (); }; };
 		EBAB03331BFC797A00486400 /* UIImageView+MyCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAB03321BFC797A00486400 /* UIImageView+MyCache.m */; settings = {ASSET_TAGS = (); }; };
 		EBAB03371BFC902E00486400 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAB03361BFC902E00486400 /* Helpers.m */; settings = {ASSET_TAGS = (); }; };
+		EBAB033B1BFCA23300486400 /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAB033A1BFCA23300486400 /* ImageDownloader.m */; settings = {ASSET_TAGS = (); }; };
+		EBAB033E1BFCAB1100486400 /* DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAB033D1BFCAB1100486400 /* DataProvider.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,10 @@
 		EBAB03321BFC797A00486400 /* UIImageView+MyCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MyCache.m"; sourceTree = "<group>"; };
 		EBAB03351BFC902E00486400 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
 		EBAB03361BFC902E00486400 /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
+		EBAB03391BFCA23300486400 /* ImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloader.h; sourceTree = "<group>"; };
+		EBAB033A1BFCA23300486400 /* ImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloader.m; sourceTree = "<group>"; };
+		EBAB033C1BFCAB1100486400 /* DataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
+		EBAB033D1BFCAB1100486400 /* DataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,7 @@
 		EBAB02EE1BFC732100486400 = {
 			isa = PBXGroup;
 			children = (
+				EBAB03381BFCA21D00486400 /* Image Downloader */,
 				EBAB03351BFC902E00486400 /* Helpers.h */,
 				EBAB03361BFC902E00486400 /* Helpers.m */,
 				EBAB03301BFC791E00486400 /* Categories */,
@@ -161,6 +168,17 @@
 				EBAB03321BFC797A00486400 /* UIImageView+MyCache.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		EBAB03381BFCA21D00486400 /* Image Downloader */ = {
+			isa = PBXGroup;
+			children = (
+				EBAB03391BFCA23300486400 /* ImageDownloader.h */,
+				EBAB033A1BFCA23300486400 /* ImageDownloader.m */,
+				EBAB033C1BFCAB1100486400 /* DataProvider.h */,
+				EBAB033D1BFCAB1100486400 /* DataProvider.m */,
+			);
+			path = "Image Downloader";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +316,8 @@
 				EBAB02FF1BFC732100486400 /* AppDelegate.m in Sources */,
 				EBAB03371BFC902E00486400 /* Helpers.m in Sources */,
 				EBAB02FC1BFC732100486400 /* main.m in Sources */,
+				EBAB033B1BFCA23300486400 /* ImageDownloader.m in Sources */,
+				EBAB033E1BFCAB1100486400 /* DataProvider.m in Sources */,
 				EBAB03331BFC797A00486400 /* UIImageView+MyCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,10 +8,14 @@
 
 #import "ViewController.h"
 #import "CellImage.h"
+#import "DataProvider.h"
+#import "Helpers.h"
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     NSMutableArray *arrayImages;
+    NSArray *imgList;
+    NSMutableArray *arrayStrURLs;
 }
 
 @end
@@ -29,7 +33,7 @@
     
     
     //Fill the array
-    NSArray *imgList = [[NSArray alloc] initWithObjects:
+    imgList = [[NSArray alloc] initWithObjects:
                         @"http://farm4.static.flickr.com/3483/4017988903_84858e0e6e_s.jpg",
                         @"http://farm3.static.flickr.com/2436/4015786038_7b530f9cce_s.jpg",
                         @"http://farm3.static.flickr.com/2643/4025878602_85f7cd1724_s.jpg",
@@ -121,12 +125,36 @@
                         @"http://farm3.static.flickr.com/2546/4012296861_146d4805df_s.jpg",
                         nil];
     
-    arrayImages = [imgList mutableCopy];
+    arrayStrURLs = [imgList mutableCopy];
+  //  arrayImages = [imgList mutableCopy];
+    [self getImagesReady];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - Custom Methods
+-(void)getImagesReady
+{
+    [DataProvider getImagesFromURLs:[self getURLsFromStrings:[arrayStrURLs subarrayWithRange:NSMakeRange(0,10)]] withCompletionBlock:^(id arrImageDownloaded) {
+        NSLog(@"Here is downloaded image of array %@",arrImageDownloaded);
+        arrayImages = arrImageDownloaded;
+        [Helpers RunOnMainThread:^{
+            [_tblViewImageDemo reloadData];
+        }];
+    }];
+}
+
+-(NSArray *)getURLsFromStrings:(NSArray *)arrStrURLs
+{
+    NSMutableArray *arrURLs = [[NSMutableArray alloc]init];
+    for (NSString *strImage in arrStrURLs) {
+        [arrURLs addObject:[NSURL URLWithString:strImage]];
+    }
+    return [arrURLs copy];
 }
 
 
@@ -154,8 +182,8 @@
     
     CellImage *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier forIndexPath:indexPath];
     
-    NSString *strImageUrl=arrayImages[indexPath.row];
-    [cell configureCellForIndexPath:indexPath withImageURL:strImageUrl];
+   // NSString *strImageUrl=arrayImages[indexPath.row];
+    [cell configureCellForIndexPath:indexPath withImage:arrayImages[indexPath.row]];
     
     return cell;
 }
