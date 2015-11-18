@@ -15,6 +15,9 @@
 		EBAB030A1BFC732100486400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBAB03081BFC732100486400 /* LaunchScreen.storyboard */; };
 		EBAB03151BFC732100486400 /* CachingImageDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAB03141BFC732100486400 /* CachingImageDemoTests.m */; };
 		EBAB03201BFC732100486400 /* CachingImageDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAB031F1BFC732100486400 /* CachingImageDemoUITests.m */; };
+		EBAB032F1BFC746E00486400 /* CellImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAB032E1BFC746E00486400 /* CellImage.m */; settings = {ASSET_TAGS = (); }; };
+		EBAB03331BFC797A00486400 /* UIImageView+MyCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAB03321BFC797A00486400 /* UIImageView+MyCache.m */; settings = {ASSET_TAGS = (); }; };
+		EBAB03371BFC902E00486400 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAB03361BFC902E00486400 /* Helpers.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		EBAB031B1BFC732100486400 /* CachingImageDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CachingImageDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBAB031F1BFC732100486400 /* CachingImageDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CachingImageDemoUITests.m; sourceTree = "<group>"; };
 		EBAB03211BFC732100486400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBAB032D1BFC746E00486400 /* CellImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellImage.h; sourceTree = "<group>"; };
+		EBAB032E1BFC746E00486400 /* CellImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellImage.m; sourceTree = "<group>"; };
+		EBAB03311BFC797A00486400 /* UIImageView+MyCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MyCache.h"; sourceTree = "<group>"; };
+		EBAB03321BFC797A00486400 /* UIImageView+MyCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MyCache.m"; sourceTree = "<group>"; };
+		EBAB03351BFC902E00486400 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
+		EBAB03361BFC902E00486400 /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +90,9 @@
 		EBAB02EE1BFC732100486400 = {
 			isa = PBXGroup;
 			children = (
+				EBAB03351BFC902E00486400 /* Helpers.h */,
+				EBAB03361BFC902E00486400 /* Helpers.m */,
+				EBAB03301BFC791E00486400 /* Categories */,
 				EBAB02F91BFC732100486400 /* CachingImageDemo */,
 				EBAB03131BFC732100486400 /* CachingImageDemoTests */,
 				EBAB031E1BFC732100486400 /* CachingImageDemoUITests */,
@@ -101,6 +113,8 @@
 		EBAB02F91BFC732100486400 /* CachingImageDemo */ = {
 			isa = PBXGroup;
 			children = (
+				EBAB032D1BFC746E00486400 /* CellImage.h */,
+				EBAB032E1BFC746E00486400 /* CellImage.m */,
 				EBAB02FD1BFC732100486400 /* AppDelegate.h */,
 				EBAB02FE1BFC732100486400 /* AppDelegate.m */,
 				EBAB03001BFC732100486400 /* ViewController.h */,
@@ -138,6 +152,15 @@
 				EBAB03211BFC732100486400 /* Info.plist */,
 			);
 			path = CachingImageDemoUITests;
+			sourceTree = "<group>";
+		};
+		EBAB03301BFC791E00486400 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				EBAB03311BFC797A00486400 /* UIImageView+MyCache.h */,
+				EBAB03321BFC797A00486400 /* UIImageView+MyCache.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,8 +294,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBAB03021BFC732100486400 /* ViewController.m in Sources */,
+				EBAB032F1BFC746E00486400 /* CellImage.m in Sources */,
 				EBAB02FF1BFC732100486400 /* AppDelegate.m in Sources */,
+				EBAB03371BFC902E00486400 /* Helpers.m in Sources */,
 				EBAB02FC1BFC732100486400 /* main.m in Sources */,
+				EBAB03331BFC797A00486400 /* UIImageView+MyCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
