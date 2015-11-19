@@ -14,7 +14,7 @@
 
 //
 //
-
+//
 @implementation DataProvider
 #pragma mark - Public Methods
 +(void)getImagesFromURLs:(NSArray *)arrUrls withCompletionBlock:(void(^)(id))completionBlock
