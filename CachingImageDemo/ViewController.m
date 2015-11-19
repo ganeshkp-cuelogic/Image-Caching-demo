@@ -16,6 +16,8 @@
     NSMutableArray *arrayImages;
     NSArray *imgList;
     NSMutableArray *arrayStrURLs;
+    UIView *viewFooter;
+    UIActivityIndicatorView *indicatorView;
 }
 
 @end
@@ -31,6 +33,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     
+    arrayImages = [[NSMutableArray alloc]init];
     
     //Fill the array
     imgList = [[NSArray alloc] initWithObjects:
@@ -127,7 +130,8 @@
     
     arrayStrURLs = [imgList mutableCopy];
   //  arrayImages = [imgList mutableCopy];
-    [self getImagesReady];
+    [self getImagesReadyWithRange:NSMakeRange(0,10)];
+    [self makeFooterView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -137,11 +141,28 @@
 
 
 #pragma mark - Custom Methods
--(void)getImagesReady
+-(void)makeFooterView
 {
-    [DataProvider getImagesFromURLs:[self getURLsFromStrings:[arrayStrURLs subarrayWithRange:NSMakeRange(0,10)]] withCompletionBlock:^(id arrImageDownloaded) {
+    viewFooter = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0,[UIScreen mainScreen].bounds.size.width, 40.0)];
+    
+    indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
+    indicatorView.frame = CGRectMake((([UIScreen mainScreen].bounds.size.width)/2)-20, 5.0, 40.0,40.0);
+    
+    indicatorView.hidesWhenStopped = YES;
+    
+    [viewFooter addSubview:indicatorView];
+    
+    self.tblViewImageDemo.tableFooterView = viewFooter;
+    
+    //actInd = nil;
+}
+
+-(void)getImagesReadyWithRange:(NSRange )rangeObject
+{
+    [DataProvider getImagesFromURLs:[self getURLsFromStrings:[arrayStrURLs subarrayWithRange:rangeObject]] withCompletionBlock:^(id arrImageDownloaded) {
         NSLog(@"Here is downloaded image of array %@",arrImageDownloaded);
-        arrayImages = arrImageDownloaded;
+        [arrayImages addObjectsFromArray:[arrImageDownloaded copy]];
         [Helpers RunOnMainThread:^{
             [_tblViewImageDemo reloadData];
         }];
@@ -172,7 +193,13 @@
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if (indexPath.row==arrayImages.count-1) {
+        [indicatorView startAnimating];
+        if ([arrayStrURLs count]>=indexPath.row+kPageSize) {
+            [self getImagesReadyWithRange:NSMakeRange(indexPath.row,kPageSize)];
+            [indicatorView stopAnimating];
+        }
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView

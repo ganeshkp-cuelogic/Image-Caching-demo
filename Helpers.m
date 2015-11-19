@@ -30,4 +30,31 @@
     }
 }
 
++ (void)saveImage:(UIImage*)image withName:(NSString *)strName
+{
+    if (image != nil)
+    {
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                             NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString* path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg",strName]];
+        
+        NSLog(@"Saving Image path is %@ ",path);
+        
+        NSData* data = UIImagePNGRepresentation(image);
+        [data writeToFile:path atomically:YES];
+    }
+}
++ (UIImage*)loadImageForKey:(NSString *)strName
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                      [NSString stringWithFormat:@"%@.jpg",strName]];
+    UIImage* image = [UIImage imageWithContentsOfFile:path];
+    return image;
+}
+
+
 @end

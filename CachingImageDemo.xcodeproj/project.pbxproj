@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB450C9C1BFD98A3002857AC /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = EB450C9B1BFD98A3002857AC /* NSString+MD5.m */; settings = {ASSET_TAGS = (); }; };
 		EBAB02FC1BFC732100486400 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAB02FB1BFC732100486400 /* main.m */; };
 		EBAB02FF1BFC732100486400 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAB02FE1BFC732100486400 /* AppDelegate.m */; };
 		EBAB03021BFC732100486400 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAB03011BFC732100486400 /* ViewController.m */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB450C9A1BFD98A3002857AC /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		EB450C9B1BFD98A3002857AC /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		EBAB02F71BFC732100486400 /* CachingImageDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CachingImageDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBAB02FB1BFC732100486400 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EBAB02FD1BFC732100486400 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 		EBAB02EE1BFC732100486400 = {
 			isa = PBXGroup;
 			children = (
+				EB450C9A1BFD98A3002857AC /* NSString+MD5.h */,
+				EB450C9B1BFD98A3002857AC /* NSString+MD5.m */,
 				EBAB03381BFCA21D00486400 /* Image Downloader */,
 				EBAB03351BFC902E00486400 /* Helpers.h */,
 				EBAB03361BFC902E00486400 /* Helpers.m */,
@@ -314,6 +319,7 @@
 				EBAB03021BFC732100486400 /* ViewController.m in Sources */,
 				EBAB032F1BFC746E00486400 /* CellImage.m in Sources */,
 				EBAB02FF1BFC732100486400 /* AppDelegate.m in Sources */,
+				EB450C9C1BFD98A3002857AC /* NSString+MD5.m in Sources */,
 				EBAB03371BFC902E00486400 /* Helpers.m in Sources */,
 				EBAB02FC1BFC732100486400 /* main.m in Sources */,
 				EBAB033B1BFCA23300486400 /* ImageDownloader.m in Sources */,
@@ -544,6 +550,7 @@
 				EBAB03261BFC732100486400 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBAB03271BFC732100486400 /* Build configuration list for PBXNativeTarget "CachingImageDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -552,6 +559,7 @@
 				EBAB03291BFC732100486400 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBAB032A1BFC732100486400 /* Build configuration list for PBXNativeTarget "CachingImageDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -560,6 +568,7 @@
 				EBAB032C1BFC732100486400 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
