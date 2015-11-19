@@ -12,7 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgViewDemo;
 @property (weak, nonatomic) IBOutlet UILabel *lblImagename;
 
-
+//
 #pragma mark - Public Methods
 -(void)configureCellForIndexPath:(NSIndexPath *)indexPath withImage:(UIImage *)imageObject;
 @end
