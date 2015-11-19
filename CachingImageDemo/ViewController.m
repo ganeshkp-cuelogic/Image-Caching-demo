@@ -35,6 +35,12 @@
     
     arrayImages = [[NSMutableArray alloc]init];
     
+    
+    
+    
+    //Aded
+    
+    
     //Fill the array
     imgList = [[NSArray alloc] initWithObjects:
                         @"http://farm4.static.flickr.com/3483/4017988903_84858e0e6e_s.jpg",
