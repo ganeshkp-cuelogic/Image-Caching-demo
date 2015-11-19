@@ -160,11 +160,27 @@
 
 -(void)getImagesReadyWithRange:(NSRange )rangeObject
 {
+    
+    if (arrayImages.count==arrayStrURLs.count) {
+        return;
+    }
+    
     [DataProvider getImagesFromURLs:[self getURLsFromStrings:[arrayStrURLs subarrayWithRange:rangeObject]] withCompletionBlock:^(id arrImageDownloaded) {
         NSLog(@"Here is downloaded image of array %@",arrImageDownloaded);
-        [arrayImages addObjectsFromArray:[arrImageDownloaded copy]];
+        //[arrayImages addObjectsFromArray:[arrImageDownloaded copy]];
         [Helpers RunOnMainThread:^{
-            [_tblViewImageDemo reloadData];
+            
+            // now update the table
+            [self.tblViewImageDemo beginUpdates];
+            
+            for (UIImage *img in arrImageDownloaded) {
+                [arrayImages addObject:img];
+                [self.tblViewImageDemo insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:arrayImages.count - 1 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
+            
+            [self.tblViewImageDemo endUpdates];
+            
+            //[_tblViewImageDemo reloadData];
         }];
     }];
 }
