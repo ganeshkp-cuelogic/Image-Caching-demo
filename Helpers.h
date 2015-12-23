@@ -15,5 +15,5 @@
 +(void)RunOnBackgroundThread:(void (^)(void))block;
 + (UIImage*)loadImageForKey:(NSString *)strName;
 + (void)saveImage:(UIImage*)image withName:(NSString *)strName;
-
+//
 @end
